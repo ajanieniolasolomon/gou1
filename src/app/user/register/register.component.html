@@ -1,0 +1,31 @@
+<!--<form [formGroup]="rForm" (ngSubmit)="register(rForm.value)">
+    <div class="form-container">
+        <div class="row columns">
+            <h1>Registration</h1>
+            <label>email
+        <input type="text" formControlName="email">
+      </label>
+            <label>password
+        <input type="password" formControlName="password" >
+   
+          
+
+</label>
+
+            <input type="submit" class="button expanded" value="Submit Form" [disabled]="!rForm.valid">
+        </div>
+    </div>
+</form>
+<li class="list-group-item" *ngFor="let track of results | async">
+
+    {{track.guid}}
+</li>-->
+<div *ngIf="service.user | async as user; else login">
+    <h3>You are logged into Firebase via Coinbase! UID: {{ user.uid }} </h3>
+
+
+</div>
+
+<ng-template #login>
+    <button (click)="service.login()">Login with Coinbase</button>
+</ng-template>

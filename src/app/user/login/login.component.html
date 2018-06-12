@@ -1,0 +1,21 @@
+<form [formGroup]="rForm" (ngSubmit)="Login(rForm.value)">
+
+    <div class="form-container">
+        <div class="row columns">
+            <h1>UniMall🎅🏼🤶</h1>
+            <label>Email
+            <input type="text"formControlName="email" email>
+          </label>
+
+            <label>Password
+            <input formControlName="password" type="password">
+          </label>
+            <br>
+            <button mat-raised-button [disabled]="!rForm.valid" color="primary">login</button>
+
+
+        </div>
+    </div>
+
+
+</form>
